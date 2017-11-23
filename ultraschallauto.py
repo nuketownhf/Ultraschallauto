@@ -32,7 +32,7 @@ class Ultraschallauto():
         coords = cvs.coords(car)
         
 
-        if coords == [21.0, 160.0]:
+        if coords <= [21.0, 160.0]:
             print("AUTO KOMPLETT ZERSTÖRT LO WO HAST DU FAHREN GELERNT MORRUK")
             print("NEUSTART in...")
             time.sleep(1)
@@ -41,7 +41,6 @@ class Ultraschallauto():
             print("2...")
             time.sleep(1)
             print("1...")
-            time.sleep(1)
             cvs.coords(car, 500,160)
         
         
