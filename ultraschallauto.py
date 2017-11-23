@@ -27,13 +27,20 @@ class Ultraschallauto():
 
 
     def drive(self):
-        global cvs, move, car, coords
-        cvs.move(car, -10,0)
+        global cvs, move, car, coords, wand
+        cvs.move(car, -5,0)
         coords = cvs.coords(car)
-        
+            
+        if coords == [700.0, 160.0]:
+            wand = cvs.create_rectangle(0, 0, 50, 320, fill="green")
 
-        if coords <= [21.0, 160.0]:
-            global wand
+        elif coords == [350.0, 160.0]:
+            wand = cvs.create_rectangle(0, 0, 50, 320, fill="yellow")
+
+        elif coords == [100.0, 160.0]:
+            wand = cvs.create_rectangle(0, 0, 50, 320, fill="red")
+    
+        elif coords <= [15.0, 160.0]:
             print("AUTO KOMPLETT ZERSTÖRT LO WO HAST DU FAHREN GELERNT MORRUK")
             print("NEUSTART in...")
             time.sleep(1)
@@ -44,22 +51,11 @@ class Ultraschallauto():
             print("1...")
             time.sleep(1)
             cvs.coords(car, 1000,160)
-            wand = cvs.create_rectangle(0, 0, 50, 320, fill="grey")
-            
-        elif coords == [700.0, 160.0]:
-            wand = cvs.create_rectangle(0, 0, 50, 320, fill="green")
-
-        elif coords == [350.0, 160.0]:
-            wand = cvs.create_rectangle(0, 0, 50, 320, fill="yellow")
-
-        elif coords == [100.0, 160.0]:
-            wand = cvs.create_rectangle(0, 0, 50, 320, fill="red")
-    
-        
+            wand = cvs.create_rectangle(0, 0, 50, 320, fill="grey")        
         
         
 
 #----------------------------------
 
 Ultraschallauto.draw(1)
-
+print("test")
