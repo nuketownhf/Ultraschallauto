@@ -11,11 +11,18 @@ class Ultraschallauto():
     def draw(self):
     
         root = Tk()
-        cvs = Canvas(bg='black', width = 900, height = 800)
+        root.title("Distanzmesser")
+        root.resizable(width=False, height=False)
+        cvs = Canvas(bg='white', width = 1400, height = 300)
         cvs.pack()
         global carpic
         carpic = PhotoImage(file="D:\\GitHub\\Ultraschallauto\\car.png")
-        car = cvs.create_image(5, 5, image=carpic, anchor=NW)
+        car = cvs.create_image(500, 160, image=carpic, anchor=NW)
+        cvs.move(car, 0, 0)
+
+
+        wand = cvs.create_rectangle(0, 0, 50, 320, fill="grey")
+        
         
         
         
