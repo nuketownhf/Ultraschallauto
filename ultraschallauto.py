@@ -33,6 +33,7 @@ class Ultraschallauto():
         
 
         if coords <= [21.0, 160.0]:
+            global wand
             print("AUTO KOMPLETT ZERSTÖRT LO WO HAST DU FAHREN GELERNT MORRUK")
             print("NEUSTART in...")
             time.sleep(1)
@@ -42,9 +43,10 @@ class Ultraschallauto():
             time.sleep(1)
             print("1...")
             time.sleep(1)
-            cvs.coords(car, 500,160)
+            cvs.coords(car, 1000,160)
+            wand = cvs.create_rectangle(0, 0, 50, 320, fill="grey")
+            
         elif coords == [700.0, 160.0]:
-            global wand
             wand = cvs.create_rectangle(0, 0, 50, 320, fill="green")
 
         elif coords == [350.0, 160.0]:
