@@ -13,9 +13,10 @@ class Ultraschallauto():
         root = Tk()
         cvs = Canvas(bg='black', width = 900, height = 800)
         cvs.pack()
+        global carpic
+        carpic = PhotoImage(file="D:\\GitHub\\Ultraschallauto\\car.png")
+        car = cvs.create_image(5, 5, image=carpic, anchor=NW)
         
-        im = Image.open("car.png")
-        im.show()
         
         
         
